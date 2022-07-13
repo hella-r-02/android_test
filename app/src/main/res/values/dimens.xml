@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="stars_space">5dp</dimen>
+    <dimen name="stars_size">12dp</dimen>
+    <dimen name="tag_padding">10dp</dimen>
+    <dimen name="tag_space">10dp</dimen>
+    <dimen name="title_padding">5dp</dimen>
+    <dimen name="global_margin">20dp</dimen>
+    <dimen name="navigator_margin_vertical">30dp</dimen>
+    <dimen name="review_title_padding_start">10dp</dimen>
+    <dimen name="review_comment_padding_top">7dp</dimen>
+    <dimen name="reviewers_count_padding_top">5dp</dimen>
+    <dimen name="rating_title_margin_start">5dp</dimen>
+    <dimen name="button_size">56dp</dimen>
+    <dimen name="logo_size">100dp</dimen>
+    <dimen name="app_title_text_size">20sp</dimen>
+    <dimen name="reviews_count_text_size">12sp</dimen>
+    <dimen name="description_text_size">12sp</dimen>
+    <dimen name="title_review_text_size">16sp</dimen>
+    <dimen name="rating_text_size">40sp</dimen>
+    <dimen name="reviewers_count_text_size">12sp</dimen>
+</resources>

@@ -1,11 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:weightSum="12"
     tools:context=".MainActivity">
 
-    <!-- Место для верстки -->
+    <ScrollView
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/global_margin"
+        android:layout_weight="10.8"
+        android:background="@color/background"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/image_header"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/main_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/navigator_margin_vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button_back"
+                    android:layout_width="@dimen/button_size"
+                    android:layout_height="@dimen/button_size"
+                    android:layout_marginStart="@dimen/global_margin"
+                    android:background="@drawable/back"
+                    app:layout_constraintRight_toRightOf="@id/buttons"
+                    app:layout_constraintStart_toStartOf="@id/buttons"
+                    app:layout_constraintTop_toTopOf="@id/buttons" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="@dimen/button_size"
+                    android:layout_height="@dimen/button_size"
+                    android:layout_marginEnd="@dimen/global_margin"
+                    android:background="@drawable/more"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/buttons" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/app_card_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-40dp"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardElevation="0dp"
+                app:cardPreventCornerOverlap="false"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image_header">
+
+                <ImageView
+                    android:id="@+id/app_img"
+                    android:layout_width="@dimen/logo_size"
+                    android:layout_height="@dimen/logo_size"
+                    android:layout_gravity="start"
+                    android:elevation="0dp" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/app_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sk_modernist"
+                android:paddingTop="@dimen/title_padding"
+                android:paddingBottom="@dimen/title_padding"
+                android:text="@string/name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/app_title_text_size"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/app_card_view"
+                app:layout_constraintTop_toBottomOf="@id/image_header" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/stars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@id/app_card_view"
+                app:layout_constraintTop_toBottomOf="@id/app_title" />
+
+            <TextView
+                android:id="@+id/reviews_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:fontFamily="@font/sk_modernist"
+                android:text="@string/reviews_count"
+                android:textColor="@color/color_download_stat"
+                android:textSize="@dimen/reviews_count_text_size"
+                app:layout_constraintStart_toEndOf="@id/stars"
+                app:layout_constraintTop_toBottomOf="@id/app_title" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/tags"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/global_margin"
+                android:layout_marginTop="@dimen/global_margin"
+                android:layout_marginEnd="@dimen/global_margin"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/reviews_count" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/global_margin"
+                android:layout_marginTop="@dimen/global_margin"
+                android:layout_marginEnd="@dimen/global_margin"
+                android:fontFamily="@font/sk_modernist"
+                android:text="@string/description"
+                android:textColor="@color/color_description"
+                android:textSize="@dimen/description_text_size"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tags" />
+
+            <TextView
+                android:id="@+id/title_review"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/global_margin"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/sk_modernist"
+                android:text="@string/review_and_rating"
+                android:textColor="#EEF2FB"
+                android:textSize="@dimen/title_review_text_size"
+                android:textStyle="bold"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/description" />
+
+            <TextView
+                android:id="@+id/rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/global_margin"
+                android:text="@string/rating"
+                android:fontFamily="@font/sk_modernist"
+                android:textColor="@color/white"
+                android:textSize="@dimen/rating_text_size"
+                android:textStyle="bold"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title_review" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/review_stars"
+                style="@style/rating_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/rating_title_margin_start"
+                android:paddingTop="8dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toEndOf="@id/rating"
+                app:layout_constraintTop_toBottomOf="@id/title_review" />
+
+            <TextView
+                android:id="@+id/reviewers_count"
+                style="@style/rating_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/rating_title_margin_start"
+                android:fontFamily="@font/sk_modernist"
+                android:paddingTop="10dp"
+                android:text="@string/reviews_count"
+                android:textColor="@color/color_reviewers_count"
+                android:textSize="@dimen/reviewers_count_text_size"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toEndOf="@id/rating"
+                app:layout_constraintTop_toBottomOf="@id/review_stars" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/reviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/global_margin"
+                android:layout_marginEnd="@dimen/global_margin"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rating" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_install"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/global_margin"
+        android:layout_marginEnd="@dimen/global_margin"
+        android:layout_marginBottom="@dimen/global_margin"
+        android:layout_weight="1"
+        android:background="@drawable/button_background"
+        android:gravity="center"
+        android:text="@string/install"
+        android:textColor="@color/color_button_text"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+</LinearLayout>

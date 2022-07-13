@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="rating_title">
+        <item name="android:paddingStart">
+            10dp
+        </item>
+    </style>
+    <style name="ShapeAppearanceOverlay.App.rounded" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+</resources>

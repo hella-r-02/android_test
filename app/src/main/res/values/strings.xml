@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Sirius</string>
+    <string name="name">name</string>
+    <string name="install">Install</string>
+    <string name="reviews_count">0</string>
+    <string name="description">description</string>
+    <string name="review_and_rating"><![CDATA[Review & Ratings]]></string>
+    <string name="main_image">main image</string>
+    <string name="reviewer_name">name</string>
+    <string name="reviewer_date">data</string>
+    <string name="review">review</string>
+    <string name="tag">tag</string>
+    <string name="rating">0</string>
 </resources>
